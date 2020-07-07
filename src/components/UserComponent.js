@@ -3,9 +3,7 @@ import ListComponent from './ListComponent';
 
 export default class UserComponent extends React.Component {
 
-    state = {
-        lists: null, loading: true
-    }
+    state = { lists: [], loading: true }
 
     async componentDidMount(){
 
@@ -13,7 +11,8 @@ export default class UserComponent extends React.Component {
             headers:{
                 'Content-Type': 'application/json'
             }
-        }
+            }
+
         config.headers['Authorization'] = 'Token 3a345b8d202cb7089853f319748d74b082ba23d1'
 
         var url = 'http://127.0.0.1:8000/lists/';
@@ -24,10 +23,12 @@ export default class UserComponent extends React.Component {
     }
 
     render(){
+
+        const apiList = this.state.lists;
+
         return (
             <div>
-                <ListComponent listname= { 'Lista Teste 01' }/>
-                <ListComponent listname= { 'Lista Teste 02' }/>
+                {apiList.map(list => <ListComponent key={list.id} listname={list.name}/>)}
             </div>
         )
     } 
