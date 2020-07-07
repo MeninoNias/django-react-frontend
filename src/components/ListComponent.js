@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ItemComponent from './ItemComponent'
+
 
 export default function ListComponent(){
     return (
@@ -8,9 +10,8 @@ export default function ListComponent(){
                 Minha Lista
             </h2>
             <ul>
-                <li>Item 01</li>
-                <li>Item 02</li>
-                <li>Item 03</li>
+                <ItemComponent name={'Ovo'}/>
+                <ItemComponent name={'Leite'}/>
             </ul>
         </div>
     )
