@@ -3,11 +3,11 @@ import React from 'react';
 import ItemComponent from './ItemComponent'
 
 
-export default function ListComponent(){
+export default function ListComponent(props){
     return (
         <div>
             <h2>
-                Minha Lista
+                { props.listname }
             </h2>
             <ul>
                 <ItemComponent name={'Ovo'}/>
