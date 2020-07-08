@@ -1,5 +1,8 @@
 import React from 'react'
 
 export default function ItemComponent(props) {
-return <li>Item nome: { props.name }</li>
+
+    const status = props.status
+
+    return <li>{ props.name } - {status ? <p>Feito</p> : <p>Pendente</p>}</li>
 }

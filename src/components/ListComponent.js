@@ -4,14 +4,15 @@ import ItemComponent from './ItemComponent'
 
 
 export default function ListComponent(props){
+    const itens = props.itens;
+
     return (
         <div>
             <h2>
                 { props.listname }
             </h2>
             <ul>
-                <ItemComponent name={'Ovo'}/>
-                <ItemComponent name={'Leite'}/>
+                {itens.map( item => <ItemComponent key={item.id} name={item.name} status={item.done}/>)}
             </ul>
         </div>
     )

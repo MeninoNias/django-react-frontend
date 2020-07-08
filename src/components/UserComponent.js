@@ -28,7 +28,7 @@ export default class UserComponent extends React.Component {
 
         return (
             <div>
-                {apiList.map(list => <ListComponent key={list.id} listname={list.name}/>)}
+                {apiList.map(list => <ListComponent key={list.id} listname={list.name} itens={list.item_set} />)}
             </div>
         )
     } 
