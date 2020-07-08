@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import UserComponent from './components/UserComponent';
+import LoginComponent from './components/LoginComponent';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserComponent/>
+    <LoginComponent/>
   </React.StrictMode>,
   document.getElementById('root')
 );

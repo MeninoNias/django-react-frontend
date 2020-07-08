@@ -1,4 +1,5 @@
 import React from 'react'
+import UserComponent from './UserComponent';
 
 export default class LoginComponent extends React.Component{
     
@@ -37,15 +38,19 @@ export default class LoginComponent extends React.Component{
     }
 
     render(){
-        return(
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Nome
-                    <input type='text' value={this.state.username} onChange={this.handleChangeUsername} />
-                    <input type='password' value={this.state.password} onChange={this.handleChangePassword} />
-                </label>
-                <input type='submit' value='Entrar'/>
-            </form>
-        )
+        var token = localStorage.getItem('token')    
+        if (!token)
+            return(
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Nome
+                        <input type='text' value={this.state.username} onChange={this.handleChangeUsername} />
+                        <input type='password' value={this.state.password} onChange={this.handleChangePassword} />
+                    </label>
+                    <input type='submit' value='Entrar'/>
+                </form>
+            )
+        else
+            return <UserComponent/>
     }
 }
